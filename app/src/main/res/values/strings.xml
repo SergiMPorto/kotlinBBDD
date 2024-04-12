@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ricandmorty</string>
+    <string name="rick_and_morty">Rick And Morty</string>
+    <string name="login">Login</string>
+    <string name="Registro">Únete</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="insertar_personaje">Insertar Personaje</string>
+    <string name="modificar">modificar personajes</string>
+    <string name="buscar">buscar personaje</string>
+    <string name="listar">listar</string>
+    <string name="borrar">Borrar</string>
+</resources>

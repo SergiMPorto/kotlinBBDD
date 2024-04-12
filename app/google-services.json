@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435363152950",
+    "project_id": "rmbb-d21ed",
+    "storage_bucket": "rmbb-d21ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435363152950:android:ce7acf56c37cfde9c68497",
+        "android_client_info": {
+          "package_name": "com.sergi.rmbb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVe65sE5ZHf3ycOKoLqs54JT9Pz9vaTSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
