@@ -52,6 +52,9 @@ class Introducir : AppCompatActivity() {
             textStatus?.setText("")
             textSpecies?.setText("")
             Toast.makeText(this, "Insertado con Éxito", Toast.LENGTH_LONG).show()
+
+
+
         } else {
             Toast.makeText(this, "Fallo al insertar datos", Toast.LENGTH_LONG).show()
         }

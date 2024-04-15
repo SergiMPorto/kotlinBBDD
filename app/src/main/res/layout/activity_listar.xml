@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Listar">
+    android:orientation="vertical"
+    tools:context=".Listar"
+    android:background="@drawable/rick_morty_black">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="218dp"
-        android:layout_height="114dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="253dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/TextViewList"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Lista de Personajes"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/holo_orange_light"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/serie"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/linea_dividir"
+        android:dividerHeight="5dp"
+        android:scrollbars="vertical" />
+
+
+</LinearLayout>

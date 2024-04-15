@@ -4,13 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Modificar">
+    tools:context=".Modificar"
+    android:background="@drawable/rick_morty_black">
+
+
+    <EditText
+        android:id="@+id/idM"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="125dp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombreM"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idM"
+        app:layout_goneMarginTop="20dp" />
+
+    <EditText
+        android:id="@+id/statusM"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreM"
+        app:layout_goneMarginTop="20dp" />
+
+    <EditText
+        android:id="@+id/speciesM"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="species"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusM"
+        app:layout_goneMarginTop="20dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="187dp"
-        android:layout_height="119dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="279dp" />
+        android:id="@+id/btnM"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:text="Modificar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speciesM"
+        app:layout_goneMarginTop="20dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

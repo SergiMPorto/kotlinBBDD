@@ -7,15 +7,52 @@
     android:background="@drawable/rick_morty_black"
     tools:context=".Buscar">
 
+
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/idF"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="125dp"
         android:background="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombreF"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idF"
+        app:layout_goneMarginTop="20dp" />
+
+    <EditText
+        android:id="@+id/statusF"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreF"
+        app:layout_goneMarginTop="20dp" />
+
+    <EditText
+        android:id="@+id/speciesF"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/green"
+        android:hint="species"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusF"
+        app:layout_goneMarginTop="20dp" />
 
         />
 
@@ -24,12 +61,12 @@
         android:id="@+id/btnFind"
         android:layout_width="225dp"
         android:layout_height="79dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="500dp"
         android:background="@drawable/button_login"
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombre"
+        app:layout_constraintTop_toBottomOf="@id/speciesF"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
