@@ -13,7 +13,7 @@ class SQLite(
 ) : SQLiteOpenHelper(context, name, factory, version) {
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("CREATE TABLE personajes (id INTEGER PRIMARY KEY, name TEXT, status TEXT, species TEXT)")
+        db?.execSQL("CREATE TABLE IF NOT EXISTS personajes (id INTEGER PRIMARY KEY, name TEXT, status TEXT, species TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -22,7 +22,7 @@ class SQLite(
 
     fun eliminarPersonaje(nombre: String): Int {
         val db = this.writableDatabase
-        return db.delete("personajes", "name = ?", arrayOf(nombre))
+        return db.delete("personajes", "id = ?", arrayOf(nombre))
     }
 
     fun verificarExistencia(nombre: String): Boolean {
@@ -50,6 +50,4 @@ class SQLite(
         cursor.close()
         return existe
     }
-
-
 }

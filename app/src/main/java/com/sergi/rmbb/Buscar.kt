@@ -1,67 +1,60 @@
 package com.sergi.rmbb
+import android.database.Cursor
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.sergi.rmbb.R.layout
 
 class Buscar : AppCompatActivity() {
-    private var textId: EditText? = null
-    private var textNameF: EditText? = null
-    private var textStatus: EditText? = null
-    private var textSpecies: EditText? = null
-    private var nameText: EditText? = null
-    private var btnFind: Button? = null
+    private lateinit var textId: EditText
+    private lateinit var tvName: TextView
+    private lateinit var tvStatus: TextView
+    private lateinit var tvSpecies: TextView
+    private lateinit var btnFind: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout.activity_buscar)
+        setContentView(R.layout.activity_buscar)
 
         textId = findViewById(R.id.idF)
-        textNameF = findViewById(R.id.nombreF)
-        textStatus = findViewById(R.id.statusF)
-        textSpecies = findViewById(R.id.speciesF)
-        nameText = findViewById(R.id.nombreF)
+        tvName = findViewById(R.id.tvName)
+        tvStatus = findViewById(R.id.tvStatus)
+        tvSpecies = findViewById(R.id.tvSpecies)
         btnFind = findViewById(R.id.btnFind)
 
-        btnFind?.setOnClickListener {
+        btnFind.setOnClickListener {
             find()
         }
     }
 
     private fun find() {
-        val con = SQLite(this, "Dibujos", null, 1)
-        val basedatos = con.writableDatabase
-        val input = nameText?.text.toString()
-
+        val input = textId.text.toString()
         if (input.isNotEmpty()) {
-            val query = ("SELECT * FROM personajes WHERE id=? OR name=? OR status=? OR species=?")
-            val cursor = basedatos.rawQuery(query, arrayOf(input, input, input, input))
+            val con = SQLite(this, "Dibujos", null, 1)
+            val basedatos = con.readableDatabase
+            val query = "SELECT * FROM personajes WHERE id=?"
+            val cursor: Cursor? = basedatos.rawQuery(query, arrayOf(input))
+            cursor?.use { c ->
+                Log.d("Buscar", "Número de filas en el cursor: ${c.count}")
+                if (c != null && c.count > 0 && c.moveToFirst()) {
+                    val name = c.getString(c.getColumnIndex("name"))
+                    val status = c.getString(c.getColumnIndex("status"))
+                    val species = c.getString(c.getColumnIndex("species"))
 
-            cursor.use { c ->
-                val idIndex = c.getColumnIndex("id")
-                val nameIndex = c.getColumnIndex("name")
-                val statusIndex = c.getColumnIndex("status")
-                val speciesIndex = c.getColumnIndex("species")
+                    Log.d("Buscar", "Nombre: $name, Estado: $status, Especie: $species")
 
-                if (idIndex != -1 && nameIndex != -1 && statusIndex != -1 && speciesIndex != -1) {
-                    if (c.moveToFirst()) {
-                        do {
-                            val id = c.getInt(idIndex)
-                            val name = c.getString(nameIndex)
-                            val status = c.getString(statusIndex)
-                            val species = c.getString(speciesIndex)
-
-                        } while (c.moveToNext())
-                    }
+                    // Mostrar la información en los TextView
+                    tvName.text = "Nombre: $name"
+                    tvStatus.text = "Estado: $status"
+                    tvSpecies.text = "Especie: $species"
                 } else {
-                    Toast.makeText(this, "Error: Columnas no encontradas en la base de datos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "No se encontró ningún personaje con ese ID", Toast.LENGTH_SHORT).show()
                 }
             }
         } else {
             Toast.makeText(this, "El campo de búsqueda está vacío", Toast.LENGTH_SHORT).show()
         }
     }
-
-}

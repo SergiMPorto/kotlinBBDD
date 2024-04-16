@@ -1,6 +1,5 @@
 package com.sergi.rmbb
 
-import android.content.ContentValues
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,33 +29,26 @@ class Introducir : AppCompatActivity() {
     }
 
     private fun insert() {
-        val con = SQLite(this, "Dibujos", null, 1)
-        val basedatos = con.writableDatabase
-
         val id = textId?.text.toString()
         val name = textName?.text.toString()
         val status = textStatus?.text.toString()
         val species = textSpecies?.text.toString()
 
         if (id.isNotEmpty() && name.isNotEmpty() && status.isNotEmpty() && species.isNotEmpty()) {
-            val registro = ContentValues().apply {
-                put("id", id)
-                put("name", name)
-                put("status", status)
-                put("species", species)
-            }
+            val con = SQLite(this, "Dibujos", null, 1)
+            val basedatos = con.writableDatabase
+            val query = ("INSERT INTO personajes (id, name, status, species) VALUES (?, ?, ?, ?)")
+            basedatos.execSQL(query, arrayOf(id, name, status, species))
 
-            basedatos.insert("personajes", null, registro)
+            Toast.makeText(this@Introducir, "Insertado con Éxito", Toast.LENGTH_LONG).show()
+
+            // Limpiar los campos después de la inserción
             textId?.setText("")
             textName?.setText("")
             textStatus?.setText("")
             textSpecies?.setText("")
-            Toast.makeText(this, "Insertado con Éxito", Toast.LENGTH_LONG).show()
-
-
-
         } else {
-            Toast.makeText(this, "Fallo al insertar datos", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Fallo al insertar datos: algún campo está vacío", Toast.LENGTH_LONG).show()
         }
     }
 }

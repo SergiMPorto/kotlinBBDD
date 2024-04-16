@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,26 +15,23 @@
         android:theme="@style/Theme.RMBB"
         tools:targetApi="31">
         <activity
+            android:name=".Borrar"
+            android:exported="false"
+            android:theme="@style/AppTheme"/>
+        <activity
             android:name=".PersonajesAdapter"
             android:exported="false"
-            android:theme="@style/AppTheme"
-            />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ViewHolder"
             android:exported="false"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Personaje"
             android:exported="false"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Modificar"
-            android:exported="false"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".Borrar"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity

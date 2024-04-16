@@ -18,43 +18,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/nombreF"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
-        android:background="@color/green"
-        android:hint="nombre"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/green1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/idF"
-        app:layout_goneMarginTop="20dp" />
+        app:layout_constraintTop_toBottomOf="@id/idF" />
 
-    <EditText
-        android:id="@+id/statusF"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
-        android:background="@color/green"
-        android:hint="status"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/green1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombreF"
-        app:layout_goneMarginTop="20dp" />
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
 
-    <EditText
-        android:id="@+id/speciesF"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/tvSpecies"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
-        android:background="@color/green"
-        android:hint="species"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/green1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/statusF"
-        app:layout_goneMarginTop="20dp" />
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvStatus" />
 
     <Button
 
@@ -66,7 +58,7 @@
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/speciesF"
+
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

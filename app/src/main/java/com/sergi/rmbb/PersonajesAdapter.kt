@@ -39,7 +39,7 @@ class PersonajesAdapter(
 
         val personaje = personajesList[position]
         viewHolder.idTextView.text = personaje.id.toString()
-        viewHolder.nombreTextView.text = personaje.nombre
+        viewHolder.nameTextView.text = personaje.name
         viewHolder.statusTextView.text = personaje.status
         viewHolder.speciesTextView.text = personaje.species
 
@@ -54,7 +54,7 @@ class PersonajesAdapter(
 
     private class ViewHolder(view: View) {
         val idTextView: TextView = view.findViewById(R.id.id)
-        val nombreTextView: TextView = view.findViewById(R.id.nombrelist)
+        val nameTextView: TextView = view.findViewById(R.id.nombrelist)
         val statusTextView: TextView = view.findViewById(R.id.statuslist)
         val speciesTextView: TextView = view.findViewById(R.id.specieslist)
     }

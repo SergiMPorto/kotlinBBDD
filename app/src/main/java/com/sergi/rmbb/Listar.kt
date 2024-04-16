@@ -21,11 +21,15 @@ class Listar : AppCompatActivity() {
 
         listView = findViewById(R.id.listView)
 
-
         adapter = PersonajesAdapter(this, ArrayList())
         listView.adapter = adapter
 
+        obtenerPersonajes()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        // Actualizar la lista de personajes cada vez que la actividad vuelve a primer plano
         obtenerPersonajes()
     }
 
@@ -38,7 +42,6 @@ class Listar : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val personajes = response.body()?.results
                     personajes?.let {
-
                         adapter.actualizarPersonajes(it)
                     }
                 } else {
