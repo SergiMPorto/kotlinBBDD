@@ -1,6 +1,12 @@
 package com.sergi.rmbb
 
-/*class Introducir : AppCompatActivity() {
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class Introducir : AppCompatActivity() {
     private var textId: EditText? = null
     private var textName: EditText? = null
     private var textStatus: EditText? = null
@@ -29,20 +35,25 @@ package com.sergi.rmbb
         val species = textSpecies?.text.toString()
 
         if (id.isNotEmpty() && name.isNotEmpty() && status.isNotEmpty() && species.isNotEmpty()) {
-            val con = SQLite(this, "dibujos.db", null, 1)
+            val con = SQLite(this, "dibujos", null, 1)
             val basedatos = con.writableDatabase
-            val query = ("INSERT INTO personajes (id, name, status, species) VALUES (?, ?, ?, ?)")
+            val query =
+                "INSERT INTO ${SQLite.TABLE_NAME} (${SQLite.COLUMN_ID}, ${SQLite.COLUMN_NAME}, ${SQLite.COLUMN_STATUS}, ${SQLite.COLUMN_SPECIES}) VALUES (?, ?, ?, ?)"
             basedatos.execSQL(query, arrayOf(id, name, status, species))
 
             Toast.makeText(this@Introducir, "Insertado con Éxito", Toast.LENGTH_LONG).show()
 
-            // Limpiar los campos después de la inserción
+
             textId?.setText("")
             textName?.setText("")
             textStatus?.setText("")
             textSpecies?.setText("")
         } else {
-            Toast.makeText(this, "Fallo al insertar datos: algún campo está vacío", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "Fallo al insertar datos: algún campo está vacío",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
-}*/
+}

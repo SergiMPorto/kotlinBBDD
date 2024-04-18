@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 
-class SQLite(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class SQLite(context: Context, s: String, nothing: Nothing?, i: Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
         const val DATABASE_NAME = "dibujos.db"
@@ -24,14 +24,14 @@ class SQLite(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, 
                 "($COLUMN_ID INTEGER PRIMARY KEY, " +
                 "$COLUMN_NAME TEXT, " +
                 "$COLUMN_STATUS TEXT, " +
-                "$COLUMN_SPECIES TEXT,"
+                "$COLUMN_SPECIES TEXT)"
 
         db?.execSQL(createTableSQL)
         Log.d("DibujosDBHelper", "Database created")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        // Implement if needed
+
     }
 
     fun addPersonaje(personaje: Personaje, db: SQLiteDatabase) {

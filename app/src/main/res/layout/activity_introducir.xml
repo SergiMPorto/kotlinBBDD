@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rick_morty_black"
-    tools:context="Introducir">
+    tools:context="com.sergi.rmbb.Introducir">
 
 
     <EditText
@@ -27,7 +27,7 @@
         android:hint="nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id"
+        app:layout_constraintTop_toBottomOf="@id/idInt"
         app:layout_goneMarginTop="20dp" />
 
     <EditText

@@ -59,5 +59,16 @@
         android:layout_marginEnd="52dp"/>
 
 
+    <Button
+        android:id="@+id/ordenByName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="ordenar por nombre"
+        app:layout_constraintTop_toBottomOf="@id/borrar"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="52dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

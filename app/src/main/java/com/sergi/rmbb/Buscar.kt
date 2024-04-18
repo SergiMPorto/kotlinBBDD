@@ -1,6 +1,15 @@
 package com.sergi.rmbb
 
-/*class Buscar : AppCompatActivity() {
+import android.annotation.SuppressLint
+import android.database.Cursor
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class Buscar : AppCompatActivity() {
     private lateinit var textId: EditText
     private lateinit var tvName: TextView
     private lateinit var tvStatus: TextView
@@ -26,21 +35,16 @@ package com.sergi.rmbb
     private fun find() {
         val input = textId.text.toString()
         if (input.isNotEmpty()) {
-            val con = SQLite(this, "Dibujos", null, 1)
+            val con = SQLite(this, "dibujos", null, 1)
+
             val basedatos = con.readableDatabase
-            val query = "SELECT * FROM personajes WHERE id=?"
+            val query = "SELECT * FROM ${SQLite.TABLE_NAME} WHERE ${SQLite.COLUMN_ID}=?"
             val cursor: Cursor? = basedatos.rawQuery(query, arrayOf(input))
             cursor?.use { c ->
-                Log.d("Buscar", "Número de columnas en el cursor: ${c.columnCount}")
-                for (i in 0 until c.columnCount) {
-                    Log.d("Buscar", "Nombre de la columna $i: ${c.getColumnName(i)}")
-                }
                 if (c.moveToFirst()) {
-                    val name = c.getString(c.getColumnIndex("name"))
-                    val status = c.getString(c.getColumnIndex("status"))
-                    val species = c.getString(c.getColumnIndex("species"))
-
-                    Log.d("Buscar", "Nombre: $name, Estado: $status, Especie: $species")
+                    val name = c.getString(c.getColumnIndex(SQLite.COLUMN_NAME))
+                    val status = c.getString(c.getColumnIndex(SQLite.COLUMN_STATUS))
+                    val species = c.getString(c.getColumnIndex(SQLite.COLUMN_SPECIES))
 
                     tvName.text = "Nombre: $name"
                     tvStatus.text = "Estado: $status"
@@ -54,4 +58,4 @@ package com.sergi.rmbb
             Toast.makeText(this, "El campo de búsqueda está vacío", Toast.LENGTH_SHORT).show()
         }
     }
-}*/
+}

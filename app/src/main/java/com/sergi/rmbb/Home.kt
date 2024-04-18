@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Home : AppCompatActivity() {
 
-    private lateinit var buscar: Button
+
     private lateinit var btnListar: Button
+    private lateinit var btInsertar : Button
+    private lateinit var btnOrden : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,25 +21,40 @@ class Home : AppCompatActivity() {
         btnListar.setOnClickListener {
             startActivity(Intent(this, Listar::class.java))
         }
-    }
-}
 
-      // / val btnInsertar: Button = findViewById(R.id.insertar)
-
-     //   btnInsertar.setOnClickListener {
-       //     obtenerYGuardarPersonajes()
-       // }
-
-
-
-
-
-      /*  val btnFind: Button = findViewById(R.id.buscar)
+        val btnFind: Button = findViewById(R.id.buscar)
         btnFind.setOnClickListener {
             val intent = Intent(this, Buscar::class.java)
             startActivity(intent)
         }
+
+       btInsertar= findViewById(R.id.insertar)
+        btInsertar.setOnClickListener {
+            val intent = Intent(this,Introducir::class.java)
+            startActivity(intent)
+        }
+
+        btnOrden=findViewById(R.id.ordenByName)
+        btnOrden.setOnClickListener {
+            val intent = Intent(this, OrdenarPorNombre::class.java)
+            startActivity(intent)
+        }
+
+
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+   /* }
 
     private fun obtenerYGuardarPersonajes() {
         val apiService = RetrofitService.apiService

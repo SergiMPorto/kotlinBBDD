@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        dibujosDBHelper = SQLite(this)
+        dibujosDBHelper = SQLite(this, "dibujos", null, 1)
 
         val btnLogin: Button = findViewById(R.id.login)
         val btnRegistro: TextView = findViewById(R.id.botonRegistro)
