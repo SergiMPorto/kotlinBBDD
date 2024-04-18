@@ -1,14 +1,6 @@
 package com.sergi.rmbb
-import android.database.Cursor
-import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 
-class Buscar : AppCompatActivity() {
+/*class Buscar : AppCompatActivity() {
     private lateinit var textId: EditText
     private lateinit var tvName: TextView
     private lateinit var tvStatus: TextView
@@ -30,6 +22,7 @@ class Buscar : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("Range")
     private fun find() {
         val input = textId.text.toString()
         if (input.isNotEmpty()) {
@@ -38,15 +31,17 @@ class Buscar : AppCompatActivity() {
             val query = "SELECT * FROM personajes WHERE id=?"
             val cursor: Cursor? = basedatos.rawQuery(query, arrayOf(input))
             cursor?.use { c ->
-                Log.d("Buscar", "Número de filas en el cursor: ${c.count}")
-                if (c != null && c.count > 0 && c.moveToFirst()) {
+                Log.d("Buscar", "Número de columnas en el cursor: ${c.columnCount}")
+                for (i in 0 until c.columnCount) {
+                    Log.d("Buscar", "Nombre de la columna $i: ${c.getColumnName(i)}")
+                }
+                if (c.moveToFirst()) {
                     val name = c.getString(c.getColumnIndex("name"))
                     val status = c.getString(c.getColumnIndex("status"))
                     val species = c.getString(c.getColumnIndex("species"))
 
                     Log.d("Buscar", "Nombre: $name, Estado: $status, Especie: $species")
 
-                    // Mostrar la información en los TextView
                     tvName.text = "Nombre: $name"
                     tvStatus.text = "Estado: $status"
                     tvSpecies.text = "Especie: $species"
@@ -54,7 +49,9 @@ class Buscar : AppCompatActivity() {
                     Toast.makeText(this, "No se encontró ningún personaje con ese ID", Toast.LENGTH_SHORT).show()
                 }
             }
+
         } else {
             Toast.makeText(this, "El campo de búsqueda está vacío", Toast.LENGTH_SHORT).show()
         }
     }
+}*/

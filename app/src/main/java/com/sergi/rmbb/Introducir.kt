@@ -1,12 +1,6 @@
 package com.sergi.rmbb
 
-import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-
-class Introducir : AppCompatActivity() {
+/*class Introducir : AppCompatActivity() {
     private var textId: EditText? = null
     private var textName: EditText? = null
     private var textStatus: EditText? = null
@@ -17,7 +11,7 @@ class Introducir : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introducir)
 
-        textId = findViewById(R.id.id)
+        textId = findViewById(R.id.idInt)
         textName = findViewById(R.id.nombre)
         textStatus = findViewById(R.id.status)
         textSpecies = findViewById(R.id.species)
@@ -35,7 +29,7 @@ class Introducir : AppCompatActivity() {
         val species = textSpecies?.text.toString()
 
         if (id.isNotEmpty() && name.isNotEmpty() && status.isNotEmpty() && species.isNotEmpty()) {
-            val con = SQLite(this, "Dibujos", null, 1)
+            val con = SQLite(this, "dibujos.db", null, 1)
             val basedatos = con.writableDatabase
             val query = ("INSERT INTO personajes (id, name, status, species) VALUES (?, ?, ?, ?)")
             basedatos.execSQL(query, arrayOf(id, name, status, species))
@@ -51,4 +45,4 @@ class Introducir : AppCompatActivity() {
             Toast.makeText(this, "Fallo al insertar datos: algún campo está vacío", Toast.LENGTH_LONG).show()
         }
     }
-}
+}*/

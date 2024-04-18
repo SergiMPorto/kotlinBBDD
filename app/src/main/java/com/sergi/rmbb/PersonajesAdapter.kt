@@ -43,6 +43,7 @@ class PersonajesAdapter(
         viewHolder.statusTextView.text = personaje.status
         viewHolder.speciesTextView.text = personaje.species
 
+
         return view
     }
 
@@ -57,5 +58,6 @@ class PersonajesAdapter(
         val nameTextView: TextView = view.findViewById(R.id.nombrelist)
         val statusTextView: TextView = view.findViewById(R.id.statuslist)
         val speciesTextView: TextView = view.findViewById(R.id.specieslist)
+
     }
 }

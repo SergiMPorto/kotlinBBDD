@@ -1,11 +1,6 @@
 package com.sergi.rmbb
 
-import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-
+/*
 class Modificar : AppCompatActivity() {
     private lateinit var db: SQLite
     private lateinit var idM: EditText
@@ -57,3 +52,4 @@ class Modificar : AppCompatActivity() {
         }
     }
 }
+*/

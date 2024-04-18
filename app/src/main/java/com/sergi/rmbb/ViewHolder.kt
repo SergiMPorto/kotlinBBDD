@@ -9,4 +9,5 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val nombreTextView: TextView = itemView.findViewById(R.id.nombrelist)
     val statusTextView: TextView = itemView.findViewById(R.id.statuslist)
     val speciesTextView: TextView = itemView.findViewById(R.id.specieslist)
+
 }
